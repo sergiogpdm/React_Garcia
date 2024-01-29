@@ -1,0 +1,56 @@
+.footer {
+  background-color: #192b5e;
+  color: white;
+  padding: 40px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 20px;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column h3 {
+  font-size: 1em; /* Ajusta esto según tus preferencias */
+  color: #fff;
+  margin-bottom: 15px;
+  text-transform: uppercase; /* Esto hará que el texto esté en mayúsculas como en la imagen */
+  border-bottom: 1px solid #ffffff; /* Esto añade una línea debajo del título como en la imagen */
+  padding-bottom: 10px; /* Esto añade un poco de espacio debajo del título */
+}
+
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  padding-top: 20px;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.footer-media {
+  padding-top: 20px;
+  font-size: 0.8em;
+  text-align: right;
+  margin-top: -60px;
+  margin-right: 90px;
+}
+
+.footer-bottom-icons {
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+}

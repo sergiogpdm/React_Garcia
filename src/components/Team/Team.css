@@ -1,0 +1,109 @@
+.team {
+  padding: 20px;
+  text-align: center;
+}
+
+.team-header {
+  width: 102.4%; /* Cambia el ancho al 100% del ancho de la ventana */
+  background-color: #182e43;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin: 0; /* Elimina cualquier margen que pueda estar presente */
+  margin-bottom: 40px;
+}
+
+.team-header h2 {
+  margin: 0; /* Remueve márgenes por defecto */
+  font-size: 24px; /* Ajusta el tamaño del texto del título si es necesario */
+  color: white;
+}
+
+.region-title {
+  cursor: pointer;
+  margin: 20px 0;
+  padding: 10px;
+  font-size: 1.5em;
+  color: #333; /* Color del texto */
+  background-color: white; /* Color de fondo para las cabeceras */
+  border: none;
+  text-align: left;
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+}
+
+.region-title:hover,
+.region-title:focus {
+  background-color: #e6ecf2; /* Color de fondo al pasar el ratón */
+}
+
+.region-title::after {
+  content: '▼'; /* Puedes usar un ícono en su lugar */
+  font-size: 1em;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+.region-title.active::after {
+  transform: translateY(-50%) rotate(180deg); /* Gira el indicador cuando está activo */
+}
+
+.employees {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.employees.show {
+  max-height: 1000px; /* Este valor debe ser suficientemente alto para contener todos los elementos */
+  padding: 20px 0;
+}
+
+.employee-card {
+  box-sizing: border-box;
+  width: calc(50% - 20px); /* 50% para 2 elementos por fila, menos el margen */
+  margin: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.employee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.employee-name {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.employee-title {
+  font-size: 1em;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .employee-card {
+    width: 100%; /* En pantallas pequeñas, cada tarjeta ocupa el 100% del ancho */
+    margin: 10px 0;
+  }
+
+  .region-title::after {
+    content: '▶'; /* Cambiar el indicador para pantallas pequeñas */
+    transform: rotate(0);
+  }
+
+  .region-title.active::after {
+    transform: rotate(90deg); /* Gira el indicador cuando está activo en pantallas pequeñas */
+  }
+}

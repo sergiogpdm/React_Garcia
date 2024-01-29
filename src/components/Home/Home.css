@@ -1,0 +1,71 @@
+.home {
+  height: 1000px;
+  display: flex;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.5s ease-in-out;
+}
+
+.home-content-left, .home-content-left h1, .home-content-right p {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.home-content-left {
+  flex: 2;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%;
+  margin-right: 100px;
+  margin-top: -100px;
+}
+
+.home-content-right {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 10%;
+  margin-top: -100px;
+}
+
+.home h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  color: white; /* Establecer el color del texto del título a blanco */
+}
+
+.home-button {
+  background-color: #173142;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 15px;
+  width: 300px;
+  transition: background-color 0.3s;
+}
+
+.home-button:hover {
+  background-color: #1d1b17;
+}
+
+.clickable-option {
+  cursor: pointer;
+  color: white; /* Establecer el color del texto de las opciones a blanco */
+  transition: font-size 0.5s ease-in-out, opacity 0.5s ease-in-out, background-color 0.5s ease-in-out, padding 0.5s ease-in-out; /* Transición suave para múltiples propiedades */
+}
+
+.selected {
+  font-size: 1.2em; /* Más grande que el tamaño por defecto */
+  opacity: 1; /* Totalmente opaco */
+  padding: 8px 0; /* Espaciado adicional para la opción seleccionada */
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo ligeramente resaltado */
+  border-bottom: 3px solid white; /* Línea debajo para destacar */
+}
+
+.not-selected {
+  opacity: 0.5; /* Más opaco para las no seleccionadas */
+}

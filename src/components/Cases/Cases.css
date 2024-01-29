@@ -1,0 +1,43 @@
+.cases {
+  padding: 20px;
+  background-color: #182e43;
+}
+
+.cases h2 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 36px;
+  margin: 10px 0;
+  margin-top: -30px;
+}
+
+.cases .case {
+  background-color: #fff; /* Fondo blanco para cada caso */
+  border-radius: 5px; /* Bordes redondeados para la tarjeta */
+  padding: 15px;
+  margin-bottom: 20px; /* Espacio entre las tarjetas de casos */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
+}
+
+.cases .case h3 {
+  color: #333;
+  margin-top: 0;
+}
+
+.cases .case h4 {
+  color: #666;
+  font-weight: normal;
+}
+
+.cases p {
+  color: #666;
+  line-height: 1.6; /* Espaciado de línea para mejorar la legibilidad */
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(75, 93, 255, 0), #182e43, rgba(42, 110, 255, 0)); /* Esto crea un efecto de desvanecimiento en los bordes de la línea */
+  margin: 5px 0;
+}
+
