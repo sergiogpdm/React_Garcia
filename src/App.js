@@ -7,6 +7,7 @@ import Services from './components/Services/Services';
 import Team from './components/Team/Team';
 import Cases from './components/Cases/Cases';
 import Contact from './components/Contact/Contact';
+import Loader from './components/Loader/Loader';
 import './App.css';
 
 function App() {
