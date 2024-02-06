@@ -2,10 +2,12 @@
   background-color: #192b5e;
   color: white;
   padding: 40px;
+  font-size: 16px; /* Base font size for better scaling */
 }
 
 .footer-content {
   display: flex;
+  flex-wrap: wrap; /* Allows elements to wrap as needed */
   justify-content: space-between;
   border-bottom: 1px solid #ffffff;
   padding-bottom: 20px;
@@ -13,17 +15,18 @@
 
 .footer-column {
   flex: 1;
+  min-width: 250px; /* Prevents columns from becoming too narrow */
+  margin: 10px; /* Adds some space between columns when they stack */
 }
 
 .footer-column h3 {
-  font-size: 1em; /* Ajusta esto según tus preferencias */
+  font-size: 1.2em; /* Slightly larger for readability */
   color: #fff;
   margin-bottom: 15px;
-  text-transform: uppercase; /* Esto hará que el texto esté en mayúsculas como en la imagen */
-  border-bottom: 1px solid #ffffff; /* Esto añade una línea debajo del título como en la imagen */
-  padding-bottom: 10px; /* Esto añade un poco de espacio debajo del título */
+  text-transform: uppercase;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 10px;
 }
-
 
 .footer-column ul {
   list-style: none;
@@ -35,22 +38,58 @@
   margin-bottom: 10px;
 }
 
-.footer-bottom {
+.footer-bottom, .footer-media, .footer-logo {
+  text-align: center; /* Centers content for all screen sizes */
   padding-top: 20px;
   font-size: 0.8em;
-  text-align: center;
+  margin-top: 20px; /* Adjusts the top margin for visual separation */
+}
+
+.footer-bottom p {
+  color: white;
 }
 
 .footer-media {
-  padding-top: 20px;
-  font-size: 0.8em;
-  text-align: right;
-  margin-top: -60px;
-  margin-right: 90px;
+  display: flex;
+  justify-content: center; /* Centers social media icons */
+  margin-top: 20px; /* Adjusts for better visual separation */
 }
 
-.footer-bottom-icons {
-  margin-right: 10px;
+.footer-bottom-icons, .footer-bottom-icon {
+  margin: 0 10px; /* Adjusts margin for evenly spaced icons */
   width: 40px;
   height: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    justify-content: center; /* Centers elements on medium screens */
+  }
+
+  .footer-column {
+    flex-basis: 100%; /* Makes each column take full width on smaller screens */
+    text-align: center; /* Centers the text of each column */
+  }
+
+  .footer-media, .footer-logo {
+    justify-content: center; /* Centers content on smaller screens */
+    margin-top: 10px; /* Adjusts top margin for tight spacing */
+    margin-right: 0; /* Resets specific right margin adjustments */
+  }
+
+  .footer-media img, .footer-logo img {
+    display: inline-block; /* Ensures icons and logo are centered */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px; /* Reduces padding for very small screens */
+  }
+
+  /* Adjusts margins for a cleaner look on small devices */
+  .footer-bottom, .footer-media, .footer-logo {
+    margin-top: 10px;
+  }
 }

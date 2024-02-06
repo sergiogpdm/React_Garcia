@@ -1,3 +1,4 @@
+
 .home {
   height: 1000px;
   display: flex;
@@ -10,20 +11,23 @@
 }
 
 .home-content-left {
-  flex: 2;
+  flex: 1;
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 10%;
-  margin-right: 100px;
+  padding-left: 5%;
+  margin-right: 0;
   margin-top: -100px;
+  font-size: 45px;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  will-change: opacity, transform;
 }
 
 .home-content-right {
   flex: 1;
   text-align: left;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   padding-right: 10%;
@@ -33,7 +37,7 @@
 .home h1 {
   font-size: 3em;
   margin-bottom: 0.5em;
-  color: white; /* Establecer el color del texto del título a blanco */
+  color: white;
 }
 
 .home-button {
@@ -52,20 +56,75 @@
   background-color: #1d1b17;
 }
 
-.clickable-option {
+.clickable-option, .selected, .not-selected {
   cursor: pointer;
-  color: white; /* Establecer el color del texto de las opciones a blanco */
-  transition: font-size 0.5s ease-in-out, opacity 0.5s ease-in-out, background-color 0.5s ease-in-out, padding 0.5s ease-in-out; /* Transición suave para múltiples propiedades */
+  color: white;
+  transition: font-size 0.5s ease-in-out, opacity 0.5s ease-in-out, background-color 0.5s ease-in-out, padding 0.5s ease-in-out;
 }
 
 .selected {
-  font-size: 1.2em; /* Más grande que el tamaño por defecto */
-  opacity: 1; /* Totalmente opaco */
-  padding: 8px 0; /* Espaciado adicional para la opción seleccionada */
-  background-color: rgba(255, 255, 255, 0.2); /* Fondo ligeramente resaltado */
-  border-bottom: 3px solid white; /* Línea debajo para destacar */
+  font-size: 1.2em;
+  opacity: 1;
+  padding: 8px 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 3px solid white;
 }
 
 .not-selected {
-  opacity: 0.5; /* Más opaco para las no seleccionadas */
+  opacity: 0.5;
+}
+
+/* tablet*/
+@media  (max-width: 1024px) {
+  .home {
+    height: auto; /* Altura ajustable según el contenido */
+  }
+
+  .home-content-left {
+    flex: 1; /* Hace que ambos contenedores tengan la misma flexibilidad */
+    margin-right: 50px; /* Ajusta el margen derecho */
+    margin-top: 45px;
+    padding: 5%; /* Aumenta el padding para mejor lectura */
+  }
+
+  .home h1 {
+    font-size: 90px; /* Reduce el tamaño del título */
+  }
+
+  .home-button {
+    width: 100%; /* Hace que el botón se ajuste al contenedor */
+    max-width: 250px; /* Limita el ancho máximo del botón */
+    margin: 0 auto; /* Centra el botón */
+  }
+}
+
+/* Estilos para móviles: pantallas menores a 600px */
+@media (max-width: 599px) {
+  .home {
+    flex-direction: column; /* Alinea los contenedores en columna */
+    height: 450px;
+  }
+
+  .home-content-left {
+    flex: none; /* Elimina la propiedad flex para ajustar manualmente */
+    text-align: left; /* Centra el texto */
+    padding: 5%; /* Ajusta el padding para un mejor aprovechamiento del espacio */
+    width: 80%; /* Hace que ocupe todo el ancho disponible */
+    margin-top: 80px;
+    font-size: 20px;
+  }
+
+  .home-content-right {
+    display: none;
+  }
+
+  .home h1 {
+    font-size: 2em; /* Ajusta el tamaño del título para pantallas más pequeñas */
+  }
+
+  .home-button {
+    width: 100%; /* Extiende el botón para que ocupe todo el ancho */
+    max-width: 200px; /* Ajusta el ancho máximo para móviles */
+    margin: 0 auto; /* Centra el botón dentro de su contenedor */
+  }
 }

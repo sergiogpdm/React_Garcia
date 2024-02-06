@@ -4,36 +4,33 @@ import { Link } from 'react-router-dom';
 
 const Header = ({ refs }) => {
   const [show, setShow] = useState(true);
-  let lastScrollY = window.scrollY;
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
-        setShow(false);
+        setShow(false); // Oculta el header al desplazarse hacia abajo
       } else {
-        setShow(true);
+        setShow(true); // Muestra el header al desplazarse hacia arriba
       }
       lastScrollY = window.scrollY;
     };
 
     window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const scrollToSection = (ref) => {
     if (ref && ref.current) {
       const offsetTop = ref.current.offsetTop;
-      const offset = 70;
       window.scrollTo({
-        top: offsetTop - offset,
+        top: offsetTop - 70,
         behavior: 'smooth'
       });
     }
   };
-  
 
   return (
     <header className={`header ${show ? '' : 'hidden'}`}>
@@ -42,10 +39,10 @@ const Header = ({ refs }) => {
       </Link>
       <nav className="header-nav">
         <ul>
-          <li onClick={() => scrollToSection(refs.servicesRef)}>Servicios</li>
-          <li onClick={() => scrollToSection(refs.teamRef)}>Nuestro Equipo</li>
-          <li onClick={() => scrollToSection(refs.casesRef)}>Casos</li>
-          <li onClick={() => scrollToSection(refs.contactRef)}>Contacto</li>
+          <li onClick={() => scrollToSection(refs.servicesRef)} style={{ cursor: 'pointer' }}>Servicios</li>
+          <li onClick={() => scrollToSection(refs.teamRef)} style={{ cursor: 'pointer' }}>Nuestro Equipo</li>
+          <li onClick={() => scrollToSection(refs.casesRef)} style={{ cursor: 'pointer' }}>Casos</li>
+          <li onClick={() => scrollToSection(refs.contactRef)} style={{ cursor: 'pointer' }}>Contacto</li>
         </ul>
       </nav>
     </header>

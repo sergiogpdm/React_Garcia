@@ -29,12 +29,15 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
   width: calc(50% - 10px);
   box-sizing: border-box;
-  margin-bottom: 20px;
   transition: transform 0.3s ease-in-out; /* Animación al pasar el ratón */
 }
 
 .location:hover {
   transform: translateY(-5px); /* Eleva el cuadro al pasar el ratón */
+}
+
+.location h3 {
+  text-align: left;
 }
 
 .location h2 {
@@ -66,7 +69,7 @@
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   height: 55px;
 }
 
@@ -159,3 +162,99 @@ input:focus, textarea:focus, button:focus {
   color: #666;
   opacity: 0.9;
 }
+
+/* Puntos de ruptura para dispositivos grandes y tablets */
+@media (max-width: 1024px) {
+  /* Adaptaciones para tablets y dispositivos de tamaño similar */
+}
+
+@media (max-width: 768px) {
+  /* Adaptaciones para dispositivos más pequeños y tablets en orientación vertical */
+  .contact-page {
+    flex-direction: column;
+  }
+
+  .locations-section, .contact-form-section {
+    width: 100%;
+  }
+
+  .location {
+    width: 100%;
+  }
+}
+
+/* Puntos de ruptura para diferentes tamaños de móviles */
+@media (max-width: 600px) {
+  .locations-section, .contact-form-section {
+    padding: 15px; /* Aumentar el relleno para mejorar la legibilidad */
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group select {
+    font-size: 16px; /* Aumentar el tamaño de fuente para facilitar la lectura */
+    padding: 12px; /* Aumentar el relleno para una mejor interacción táctil */
+  }
+
+  .button {
+    font-size: 18px; /* Aumentar el tamaño de fuente para botones */
+    padding: 15px 20px; /* Aumentar el relleno para facilitar el toque */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-page,
+  .locations-section,
+  .contact-form-section,
+  .form-group input,
+  .form-group select,
+  button {
+    margin: 0; /* Elimina márgenes externos que pueden causar desbordamiento */
+    padding: 0 10px; /* Añade relleno interno para mantener el contenido dentro del viewport */
+    width: auto; /* Asegura que los elementos no se extiendan fuera del viewport */
+  }
+
+  .locations-section,
+  .contact-form-section {
+    padding: 10px; /* Ajusta el relleno para evitar desbordamiento */
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group select {
+    font-size: 14px; /* Ajusta el tamaño de fuente para mejor legibilidad en pantallas pequeñas */
+  }
+
+  .form-group {
+    margin-bottom: 10px; /* Reduce el espacio entre campos para optimizar el espacio */
+  }
+
+  .location,
+  .locations {
+    flex-direction: column; /* Cambia la disposición a vertical para evitar desbordamiento horizontal */
+  }
+
+  button {
+    font-size: 16px; /* Ajusta el tamaño de los botones para mantenerlos accesibles */
+  }
+}
+
+/* Asegúrate de que todo el contenido se ajuste dentro del viewport */
+html, body {
+  overflow-x: hidden; /* Evita el desplazamiento horizontal no deseado */
+}
+
+
+@media (max-width: 360px) {
+  .locations-section h2, .contact-form-section h2 {
+    font-size: 20px; /* Ajustar el tamaño de los títulos para mejorar la legibilidad */
+  }
+
+  .form-group {
+    margin-bottom: 15px; /* Aumentar el espacio entre campos para evitar toques accidentales */
+  }
+}
+
+

@@ -1,6 +1,7 @@
 .team {
   padding: 20px;
   text-align: center;
+  margin-bottom: -80px;
 }
 
 .team-header {
@@ -19,11 +20,20 @@
   color: white;
 }
 
+.team h2 {
+  grid-column: 1 / -1; /* Asegurándonos de que ocupe toda la fila */
+    color: #ffffff; /* Color del texto en blanco para contraste */
+    font-size: 68px; /* Tamaño de fuente grande para el título */
+    text-align: center; /* Centrar el texto */
+    margin: 0 0 20px 0; /* Margen alrededor del título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 .region-title {
   cursor: pointer;
   margin: 20px 0;
   padding: 10px;
-  font-size: 1.5em;
+  font-size: 50px;
   color: #333; /* Color del texto */
   background-color: white; /* Color de fondo para las cabeceras */
   border: none;
@@ -92,6 +102,19 @@
   color: #666;
 }
 
+@media (max-width: 480px){
+  .team h2 {
+    font-size: 32px !important; /* Ajusta el tamaño de fuente, usa !important solo como último recurso */
+    text-align: left !important; /* Alinea el texto a la izquierda, usa !important solo como último recurso */
+    margin-left: 20px !important; /* Asegura un margen izquierdo, usa !important solo como último recurso */
+    padding-left: 20px; /* Añade padding si es necesario para alinear el texto */
+  }
+
+  .region-title {
+    font-size: 32px;
+  }
+}
+
 @media (max-width: 768px) {
   .employee-card {
     width: 100%; /* En pantallas pequeñas, cada tarjeta ocupa el 100% del ancho */
@@ -100,7 +123,7 @@
 
   .region-title::after {
     content: '▶'; /* Cambiar el indicador para pantallas pequeñas */
-    transform: rotate(0);
+    transform: rotate(45);
   }
 
   .region-title.active::after {

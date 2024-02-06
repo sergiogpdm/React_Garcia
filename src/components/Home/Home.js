@@ -5,57 +5,76 @@ class HomeInner extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mainText: "Nuestro objetivo: brindar el mejor servicio a nuestros clientes",
-      backgroundColor: "#c9dee3",
-      textOpacity: 0,
+      mainText: "NUESTRO OBJETIVO: BRINDAR EL MEJOR SERVICIO A NUESTROS CLIENTES",
+      backgroundColor: "#193043",
+      textOpacity: 1,
       selectedOption: 0,
+      options: [
+        {
+          text: "NUESTRO OBJETIVO: BRINDAR EL MEJOR SERVICIO A NUESTROS CLIENTES",
+          backgroundColor: "#193043",
+        },
+        {
+          text: "SOMOS EL EQUIPO QUE TE ACOMPAÑA DE PRINCIPIO A FIN",
+          backgroundColor: "#193043",
+        },
+        {
+          text: "INFÓRMATE DE LAS NOVEDADES LEGALES EN NUESTROS EVENTOS",
+          backgroundColor: "#193043",
+        },
+      ],
     };
+    this.intervalId = null;
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({ textOpacity: 1 });
-    }, 100);
+    this.intervalId = setInterval(() => {
+      this.changeContent();
+    }, 5000); // tiempo de cambio
   }
 
-  changeContent = (newText, newBackgroundColor, optionIndex) => {
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
+  }
+
+  changeContent = () => {
+    // Primero, disminuimos la opacidad a 0 para iniciar el efecto de desvanecimiento
     this.setState({ textOpacity: 0 }, () => {
+      // Esperamos un poco antes de cambiar el contenido y restaurar la opacidad
       setTimeout(() => {
-        this.setState({
-          mainText: newText,
-          backgroundColor: newBackgroundColor,
-          textOpacity: 1,
-          selectedOption: optionIndex,
+        this.setState((prevState) => {
+          const newIndex = (prevState.selectedOption + 1) % prevState.options.length;
+          return {
+            selectedOption: newIndex,
+            mainText: prevState.options[newIndex].text,
+            backgroundColor: prevState.options[newIndex].backgroundColor,
+            textOpacity: 1, // Restauramos la opacidad a 1 para completar el efecto
+          };
         });
-      }, 500);
+      }, 500); // Tiempo de espera para simular la transición
     });
   };
 
-  renderOption = (text, backgroundColor, index) => {
-    const isSelected = this.state.selectedOption === index;
-    const optionClass = `clickable-option ${isSelected ? 'selected' : 'not-selected'}`;
-    return (
-      <p
-        className={optionClass}
-        onClick={() => this.changeContent(text, backgroundColor, index)}
-      >
-        {text}
-      </p>
+  // Método para renderizar el texto principal con la palabra clave coloreada
+  renderMainText = () => {
+    const { selectedOption, options } = this.state;
+    const keywordStyles = [{ color: '#6d7d87' }, { color: '#6d7d87' }, { color: '#6d7d87' }]; // Estilos para cada palabra clave
+    const keywords = ["objetivo:", "equipo", "legales"]; // Palabras clave
+
+    const textParts = options[selectedOption].text.split(new RegExp(`(${keywords[selectedOption]})`, 'i')).map((part, index) =>
+      part.toLowerCase() === keywords[selectedOption].toLowerCase() ? <span key={index} style={keywordStyles[selectedOption]}>{part}</span> : part
     );
+
+    return <h1>{textParts}</h1>;
   };
 
   render() {
-    const { mainText, backgroundColor, textOpacity } = this.state;
+    const { backgroundColor, textOpacity } = this.state;
+
     return (
       <div className="home" style={{ backgroundColor: backgroundColor, transition: 'background-color 0.5s ease-in-out' }}>
-        <div className="home-content-left" style={{ opacity: textOpacity, transition: 'opacity 0.5s ease-in-out' }}>
-          <h1 style={{ transition: 'opacity 0.5s ease-in-out' }}>{mainText}</h1>
-          <button className="home-button">NUESTROS SERVICIOS</button>
-        </div>
-        <div className="home-content-right">
-          {this.renderOption("Nuestro objetivo: brindar el mejor servicio a nuestros clientes", "#c9dee3", 0)}
-          {this.renderOption("Somos el equipo que te acompaña de principio a fin", "#33D1FF", 1)}
-          {this.renderOption("Infórmate de las novedades legales en nuestros eventos", "#8D33FF", 2)}
+        <div className="home-content-left" style={{ opacity: textOpacity, transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out' }}>
+          {this.renderMainText()}
         </div>
       </div>
     );
@@ -64,4 +83,3 @@ class HomeInner extends Component {
 
 const Home = forwardRef((props, ref) => <HomeInner {...props} ref={ref} />);
 export default Home;
-

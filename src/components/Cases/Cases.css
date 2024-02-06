@@ -1,43 +1,115 @@
 .cases {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* Crea doce columnas para tener un control más fino */
+  grid-gap: 20px; /* Espacio entre las tarjetas */
   padding: 20px;
-  background-color: #182e43;
+  background-color: #182e43; /* Fondo oscuro */
+  color: #ffffff; /* Texto en blanco para contraste */
+  font-family: 'Arial', sans-serif; /* Tipografía moderna y legible */
 }
 
 .cases h2 {
-  color: #ffffff;
+  grid-column: 1 / span 12; /* El título ocupa todas las columnas */
   text-align: center;
-  font-size: 36px;
-  margin: 10px 0;
-  margin-top: -30px;
+  font-size: 26px;
+  margin-bottom: 20px;
 }
 
-.cases .case {
-  background-color: #fff; /* Fondo blanco para cada caso */
-  border-radius: 5px; /* Bordes redondeados para la tarjeta */
-  padding: 15px;
-  margin-bottom: 20px; /* Espacio entre las tarjetas de casos */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
+.cases-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: white;
+  margin-top: 170px;
+  margin-bottom: 20px;
 }
 
-.cases .case h3 {
-  color: #333;
-  margin-top: 0;
+.case {
+  background-color: #ffffff;
+  color: #102a43;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
 }
 
-.cases .case h4 {
-  color: #666;
-  font-weight: normal;
+.case:hover {
+  transform: translateY(-5px);
 }
 
-.cases p {
-  color: #666;
-  line-height: 1.6; /* Espaciado de línea para mejorar la legibilidad */
+.case-featured {
+  grid-column: 1 / span 8;
 }
 
-.divider {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(75, 93, 255, 0), #182e43, rgba(42, 110, 255, 0)); /* Esto crea un efecto de desvanecimiento en los bordes de la línea */
-  margin: 5px 0;
+.case-smaller {
+  grid-column: span 4;
 }
 
+.info-icon {
+  grid-column: 1 / -1; /* Ajuste para dispositivos móviles */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #102a43;
+  color: #ffffff;
+}
+
+.info-content {
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  border-left: 3px solid #ffffff;
+  padding-left: 20px;
+  margin: 0 20px;
+}
+
+.info-content h3, .info-content p {
+  color: #ffffff;
+  text-align: left;
+}
+
+@media (min-width: 769px) {
+  .info-icon {
+    grid-column: 9 / span 4;
+  }
+}
+
+@media (max-width: 768px) {
+  .case-featured, .case-smaller, .info-icon {
+    grid-column: 1 / -1;
+  }
+
+  .case-featured, .case-smaller {
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .cases {
+    grid-template-columns: 1fr;
+  }
+
+  .case, .case-featured, .case-smaller, .info-icon {
+    grid-column: 1 / -1;
+  }
+
+  .case p, .info-content p {
+    font-size: 18px;
+    margin: 20px;
+  }
+
+  .case h3 {
+    font-size: 24px;
+  }
+
+  .case h4, .info-content h3 {
+    font-size: 20px;
+  }
+
+  .cases-title {
+    font-size: 32px !important; /* Ajusta el tamaño de fuente, usa !important solo como último recurso */
+    text-align: left !important; /* Alinea el texto a la izquierda, usa !important solo como último recurso */
+    margin-left: 20px !important; /* Asegura un margen izquierdo, usa !important solo como último recurso */
+    padding-left: 20px; /* Añade padding si es necesario para alinear el texto */
+    margin-top: 70px !important;
+  }
+}

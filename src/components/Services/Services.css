@@ -1,78 +1,103 @@
-/* Restablecer márgenes y paddings predeterminados */
+/* Estilos generales */
 html, body, #root {
   margin: 0;
   padding: 0;
-  width: 100%; /* Esto asegura que el elemento ocupe toda la anchura */
-  background-color: #c9dee3; /* Color de fondo para todo el sitio */
-}
-
-.services-header {
-  width: 100%; /* Asegura que el cabecero ocupe todo el ancho de la página */
-  background-color: #182e43; /* Color de fondo del cabecero */
-  color: white; /* Color del texto */
-  padding: 20px 0; /* Espaciado superior e inferior */
-  text-align: center; /* Alinea el texto al centro */
-  margin-bottom: 40px; /* Espacio entre el cabecero y el contenido debajo */
-}
-
-.services-header h2 {
-  margin: 0; /* Remueve márgenes por defecto */
-  font-size: 24px; /* Ajusta el tamaño del texto del título si es necesario */
-  color: white;
+  width: 100%;
+  background-color: #c9dee3;
+  /*background-color: #193043;*/
 }
 
 .services-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Tres servicios por fila */
-  gap: 20px; /* Espaciado entre servicios */
-  max-width: 1600px; /* Ancho máximo del contenedor */
-  margin: 0 auto; /* Centrado y espaciado desde el top */
-  padding: 0 20px; /* Padding en los lados para mantener el contenido dentro de una vista móvil */
-  margin-top: -90px; 
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 20px;
+  margin-top: -60px;
   padding-top: 70px;
-  max-height: 10000px;
+  height: auto; /* Ajustado para flexibilidad */
+  margin-bottom: 20px; /* Reducido para mejorar el espaciado en dispositivos móviles */
 }
 
 .service {
-  background-color: #fff; /* Fondo blanco para cada servicio */
-  border-left: 5px solid #192b5e; /* Borde izquierdo colorido para destacar */
-  padding: 20px; /* Espaciado interno */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  transition: transform 0.3s ease-in-out; /* Animación al pasar el ratón */
+  background-color: #fff;
+  border-left: 5px solid #192b5e;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
 
 .service:hover {
-  transform: translateY(-5px); /* Eleva el servicio al pasar el ratón */
+  transform: translateY(-5px);
 }
 
 .service i {
-  font-size: 24px; /* Tamaño del icono */
-  color: #192b5e; /* Color del icono */
-  margin-bottom: 15px; /* Espaciado debajo del icono */
+  font-size: 24px;
+  color: #192b5e;
+  margin-bottom: 15px;
 }
 
 .service h3 {
-  font-size: 20px; /* Tamaño de fuente del título */
-  color: #333; /* Color del texto del título */
-  margin-bottom: 10px; /* Espaciado debajo del título */
-  border-bottom: 2px solid #0056b3; /* Borde debajo del título */
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #0056b3;
 }
 
 .service p {
-  color: #666; /* Color del texto descriptivo */
-  font-size: 16px; /* Tamaño de fuente del texto descriptivo */
-  line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
+  color: #666;
+  font-size: 22px;
+  line-height: 1.5;
 }
 
-.service.see-all {
-  background-color: transparent;
-  border-left: none; /* Sin borde izquierdo */
-  text-align: center; /* Texto centrado */
-  font-weight: bold; /* Texto en negrita */
+/* Punto de ruptura para tablets */
+@media (max-width: 768px) {
+  .services-container {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas para tablets */
+    padding: 0 15px;
+  }
+
+  .service {
+    width: auto; /* Permite que el servicio se ajuste al nuevo layout */
+  }
 }
 
-.service.see-all p {
-  color: #192b5e; /* Color del enlace para 'ver todos los servicios' */
-  text-decoration: underline; /* Subrayado para indicar que es un enlace */
-  cursor: pointer; /* Cursor de tipo puntero para indicar clic */
+/* Punto de ruptura para móviles */
+@media (max-width: 480px) {
+  .services-container {
+    grid-template-columns: 1fr; /* Una sola columna para móviles */
+  }
+
+  .service {
+    height: auto; /* Ajusta la altura automáticamente para contenido variable */
+  }
+
+  .service h3 {
+    font-size: 24px; /* Tamaño de fuente más pequeño para el título */
+  }
+
+  .service p {
+    font-size: 18px; /* Tamaño de fuente más pequeño para el texto */
+  }
+
+  .services-header h2 {
+    font-size: 32px !important; /* Ajusta el tamaño de fuente, usa !important solo como último recurso */
+    text-align: left !important; /* Alinea el texto a la izquierda, usa !important solo como último recurso */
+    margin-left: 20px !important; /* Asegura un margen izquierdo, usa !important solo como último recurso */
+    padding-left: 20px; /* Añade padding si es necesario para alinear el texto */
+    margin-bottom: 70px !important;
+  }
+}
+
+
+.services-header h2 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  grid-column: 1 / -1;
+  color: #ffffff;
+  font-size: 68px;
+  text-align: center;
+  margin: 0 0 20px 0;
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
