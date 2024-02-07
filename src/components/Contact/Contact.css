@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box; /* Asegura que padding y borders estén incluidos en el ancho total */
+}
+
 .contact-page {
   display: flex;
   justify-content: space-between;
@@ -96,7 +100,7 @@
 }
 
 button {
-  background-color: #333;
+  background-color: #000000;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -109,27 +113,11 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #0e355f;
 }
 
 input:focus, textarea:focus, button:focus {
   outline: 2px solid #0056b3;
-}
-
-@media (max-width: 768px) {
-  .contact-page {
-    flex-direction: column;
-  }
-
-  .locations-section,
-  .contact-form-section {
-    width: 100%;
-  }
-
-  .location {
-    width: 100%;
-    margin-bottom: 20px;
-  }
 }
 
 .locations-section h2,
@@ -163,97 +151,48 @@ input:focus, textarea:focus, button:focus {
   opacity: 0.9;
 }
 
-/* Puntos de ruptura para dispositivos grandes y tablets */
-@media (max-width: 1024px) {
-  /* Adaptaciones para tablets y dispositivos de tamaño similar */
-}
 
 @media (max-width: 768px) {
-  /* Adaptaciones para dispositivos más pequeños y tablets en orientación vertical */
   .contact-page {
     flex-direction: column;
   }
 
-  .locations-section, .contact-form-section {
+  .locations-section,
+  .contact-form-section {
     width: 100%;
+    padding: 15px; /* Reducido de 20px para ahorrar espacio */
+    margin: 0 0 20px; /* Ajuste para asegurar consistencia sin margen lateral */
   }
 
   .location {
-    width: 100%;
-  }
-}
-
-/* Puntos de ruptura para diferentes tamaños de móviles */
-@media (max-width: 600px) {
-  .locations-section, .contact-form-section {
-    padding: 15px; /* Aumentar el relleno para mejorar la legibilidad */
+    width: 100%; /* Ya establecido, pero bueno confirmar */
+    margin-bottom: 20px;
+    padding: 15px; /* Ligeramente reducido para espacios más pequeños */
   }
 
   .form-group input[type="text"],
   .form-group input[type="email"],
   .form-group input[type="tel"],
   .form-group select {
-    font-size: 16px; /* Aumentar el tamaño de fuente para facilitar la lectura */
-    padding: 12px; /* Aumentar el relleno para una mejor interacción táctil */
+    margin-bottom: 10px; /* Reducir el espacio entre los campos */
   }
 
-  .button {
-    font-size: 18px; /* Aumentar el tamaño de fuente para botones */
-    padding: 15px 20px; /* Aumentar el relleno para facilitar el toque */
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-page,
-  .locations-section,
-  .contact-form-section,
-  .form-group input,
-  .form-group select,
-  button {
-    margin: 0; /* Elimina márgenes externos que pueden causar desbordamiento */
-    padding: 0 10px; /* Añade relleno interno para mantener el contenido dentro del viewport */
-    width: auto; /* Asegura que los elementos no se extiendan fuera del viewport */
-  }
-
-  .locations-section,
-  .contact-form-section {
-    padding: 10px; /* Ajusta el relleno para evitar desbordamiento */
-  }
-
-  .form-group input[type="text"],
-  .form-group input[type="email"],
-  .form-group input[type="tel"],
-  .form-group select {
-    font-size: 14px; /* Ajusta el tamaño de fuente para mejor legibilidad en pantallas pequeñas */
-  }
-
-  .form-group {
-    margin-bottom: 10px; /* Reduce el espacio entre campos para optimizar el espacio */
-  }
-
-  .location,
-  .locations {
-    flex-direction: column; /* Cambia la disposición a vertical para evitar desbordamiento horizontal */
+  .form-group label.checkbox-label {
+    margin-top: 0; /* Ajustar según sea necesario para alinear con el checkbox */
   }
 
   button {
-    font-size: 16px; /* Ajusta el tamaño de los botones para mantenerlos accesibles */
-  }
-}
-
-/* Asegúrate de que todo el contenido se ajuste dentro del viewport */
-html, body {
-  overflow-x: hidden; /* Evita el desplazamiento horizontal no deseado */
-}
-
-
-@media (max-width: 360px) {
-  .locations-section h2, .contact-form-section h2 {
-    font-size: 20px; /* Ajustar el tamaño de los títulos para mejorar la legibilidad */
+    padding: 10px; /* Ajustar para un mejor manejo táctil */
   }
 
-  .form-group {
-    margin-bottom: 15px; /* Aumentar el espacio entre campos para evitar toques accidentales */
+  /* Ajustar el tamaño del texto para que sea más legible en dispositivos móviles */
+  h2, p {
+    font-size: 18px; /* Ligeramente más grande para mejor legibilidad */
+  }
+
+  /* Asegúrate de que todos los elementos interactivos sean fácilmente accesibles */
+  input, button, select {
+    min-height: 44px; /* Tamaño mínimo recomendado para áreas táctiles */
   }
 }
 

@@ -35,14 +35,14 @@ const Header = ({ refs }) => {
   return (
     <header className={`header ${show ? '' : 'hidden'}`}>
       <Link to="/" onClick={() => scrollToSection(refs.homeRef)}>
-        <img src="/assets/fotos/logo.jpg" alt="Logo del Bufete" className="header-logo" />
+        <img src="/assets/fotos/logo_negro.png" alt="Logo del Bufete" className="header-logo" />
       </Link>
       <nav className="header-nav">
         <ul>
-          <li onClick={() => scrollToSection(refs.servicesRef)} style={{ cursor: 'pointer' }}>Servicios</li>
-          <li onClick={() => scrollToSection(refs.teamRef)} style={{ cursor: 'pointer' }}>Nuestro Equipo</li>
-          <li onClick={() => scrollToSection(refs.casesRef)} style={{ cursor: 'pointer' }}>Casos</li>
-          <li onClick={() => scrollToSection(refs.contactRef)} style={{ cursor: 'pointer' }}>Contacto</li>
+          <li onClick={() => scrollToSection(refs.servicesRef)} style={{ cursor: 'pointer' }}>SERVICIOS</li>
+          <li onClick={() => scrollToSection(refs.teamRef)} style={{ cursor: 'pointer' }}>NUESTRO EQUIPO</li>
+          <li onClick={() => scrollToSection(refs.casesRef)} style={{ cursor: 'pointer' }}>CASOS</li>
+          <li onClick={() => scrollToSection(refs.contactRef)} style={{ cursor: 'pointer' }}>CONTACTO</li>
         </ul>
       </nav>
     </header>

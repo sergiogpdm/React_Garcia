@@ -69,6 +69,11 @@ const Footer = () => {
           alt="logo de gpdm"
           className="footer-bottom-icon"
         ></img>
+        <img
+          src="/assets/fotos/logo_blanco.png"
+          alt="logo de gpdm"
+          className="footer-bottom-icon"
+        ></img>
       </div>
     </footer>
   );

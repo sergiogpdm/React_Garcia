@@ -1,4 +1,5 @@
 import React, { forwardRef } from "react";
+import emailjs from 'emailjs-com';
 import "./Contact.css";
 
 class ContactInner extends React.Component {
@@ -11,6 +12,7 @@ class ContactInner extends React.Component {
       phone: "",
       location: "",
       termsAccepted: false,
+      formFeedback: ''
     };
   }
 
@@ -24,19 +26,27 @@ class ContactInner extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://localhost:3001/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(this.state),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Mensaje enviado:", data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
+    // Asegurarse de que los términos y condiciones están aceptados antes de enviar
+    if (!this.state.termsAccepted) {
+      this.setState({ formFeedback: 'Debes aceptar los términos y condiciones para enviar el formulario.' });
+      return;
+    }
+
+    emailjs.sendForm('service_sr6vv6m', 'template_62qyw6y', event.target, '8zQSMF-sS2MygAn0-')
+      .then((result) => {
+          this.setState({
+            name: "",
+            lastname: "",
+            email: "",
+            phone: "",
+            location: "",
+            termsAccepted: false,
+            formFeedback: 'Se ha enviado el correo correctamente ✓'
+          });
+      }, (error) => {
+          this.setState({
+            formFeedback: 'Error al enviar el correo. Por favor, inténtalo de nuevo.'
+          });
       });
   };
 
@@ -104,12 +114,10 @@ class ContactInner extends React.Component {
             </div>
           </div>
         </div>
-
         <div className="contact-form-section">
           <h2>Escríbenos</h2>
           <p>
-            Rellena el siguiente formulario con tus datos de contacto para que
-            podamos contactar contigo.
+            Rellena el siguiente formulario con tus datos de contacto para que podamos contactar contigo.
           </p>
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">
@@ -151,7 +159,7 @@ class ContactInner extends React.Component {
                 name="phone"
                 value={this.state.phone}
                 onChange={this.handleChange}
-                placeholder="Teléfono"
+                placeholder="Teléfono (opcional)"
               />
             </div>
 
@@ -162,9 +170,7 @@ class ContactInner extends React.Component {
                 onChange={this.handleChange}
                 required
               >
-                <option value="" disabled hidden>
-                  Ubicación
-                </option>
+                <option value="" disabled hidden>Elige una ubicación</option>
                 <option value="Barcelona">Barcelona</option>
                 <option value="Madrid">Madrid</option>
                 <option value="Sabadell">Sabadell</option>
@@ -186,6 +192,7 @@ class ContactInner extends React.Component {
             </div>
 
             <button type="submit">Enviar</button>
+            {this.state.formFeedback && <div className="form-feedback">{this.state.formFeedback}</div>}
           </form>
         </div>
       </div>
@@ -196,4 +203,5 @@ class ContactInner extends React.Component {
 const Contact = forwardRef((props, ref) => (
   <ContactInner {...props} forwardedRef={ref} />
 ));
+
 export default Contact;

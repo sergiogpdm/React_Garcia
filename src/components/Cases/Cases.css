@@ -3,7 +3,7 @@
   grid-template-columns: repeat(12, 1fr); /* Crea doce columnas para tener un control más fino */
   grid-gap: 20px; /* Espacio entre las tarjetas */
   padding: 20px;
-  background-color: #182e43; /* Fondo oscuro */
+  background-image: linear-gradient(to bottom, #272626, #000000);
   color: #ffffff; /* Texto en blanco para contraste */
   font-family: 'Arial', sans-serif; /* Tipografía moderna y legible */
 }
@@ -11,21 +11,18 @@
 .cases h2 {
   grid-column: 1 / span 12; /* El título ocupa todas las columnas */
   text-align: center;
-  font-size: 26px;
+  font-size: 56px;
   margin-bottom: 20px;
-}
-
-.cases-title {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   color: white;
-  margin-top: 170px;
-  margin-bottom: 20px;
+  margin-top: -10px;
 }
+
 
 .case {
   background-color: #ffffff;
   color: #102a43;
-  border-radius: 8px;
+  border-radius: 0px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s;
@@ -49,7 +46,7 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #102a43;
+  background-color: rgba(0, 0, 0, 0);
   color: #ffffff;
 }
 
@@ -60,6 +57,7 @@
   border-left: 3px solid #ffffff;
   padding-left: 20px;
   margin: 0 20px;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .info-content h3, .info-content p {
@@ -74,12 +72,23 @@
 }
 
 @media (max-width: 768px) {
+  .cases {
+    width: auto;
+  }
+
   .case-featured, .case-smaller, .info-icon {
     grid-column: 1 / -1;
   }
 
   .case-featured, .case-smaller {
     width: auto;
+  }
+
+  .cases h2{
+    font-size: 20px;
+    text-align: left;
+    padding: block;
+    display: none;
   }
 }
 

@@ -35,8 +35,9 @@ const Cases = forwardRef((props, ref) => {
 
   return (
     <>
-      <h2 className="cases-title">ALGUNOS DE NUESTROS CASOS</h2>
+      {/*<h2 className="cases-title">ALGUNOS DE NUESTROS CASOS</h2>*/}
       <div ref={ref} className="cases">
+        <h2>ALGUNOS DE NUESTROS CASOS</h2>
         <div className="case case-featured">
           <h3>{caseStudies[0].title}</h3>
           <hr className="divider" />

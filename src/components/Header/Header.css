@@ -14,14 +14,13 @@
   padding: 10px 20px;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: fixed; /* Hace que el encabezado sea fijo */
-  top: 0; /* Alinea el encabezado en la parte superior de la ventana */
-  left: 0; /* Asegura que el encabezado se alinee a la izquierda */
-  width: 100%; /* Asegura que el encabezado ocupe el ancho completo */
-  z-index: 1000; /* Asegura que el encabezado esté sobre otros elementos */
-  transition: top 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: top 0.3s, transform 0.3s ease; /* Añade 'transform' a la transición si usas esta propiedad */
 }
-
 
 
 .header.hidden {
@@ -172,19 +171,49 @@ body {
 }
 
 @media (max-width: 1024px) {
-  .header-nav {
-    display: none; /* Oculta el menú en pantallas más pequeñas */
-  }
+
 
   .header-logo {
     height: 120px; /* Aumenta el tamaño del logo */
-    margin-left: 420px; /* Centra el logo horizontalmente */
+    margin-left: 90px; /* Centra el logo horizontalmente */
+  }
+
+  .header-nav li{
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .header-nav ul {
+    margin-right: 90px;
+  }
+}
+
+@media (min-width: 1120px) {
+
+
+  .header-logo {
+    height: 100px; /* Aumenta el tamaño del logo */
+    margin-left: 50px; /* Centra el logo horizontalmente */
+  }
+
+  .header-nav li{
+    font-size: 28px;
+    margin-right: 50px !important;
+  }
+
+  .header-nav ul {
+    margin-right: 420px;
   }
 }
 
 @media (max-width: 480px) {
   .header-logo {
     height: 70px;
-    margin-left: 140px;
+    margin-left: 160px;
   }
+
+  .header-nav {
+    display: none;
+  }
+
 }

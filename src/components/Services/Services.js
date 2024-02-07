@@ -47,10 +47,9 @@ const Services = forwardRef((props, ref) => {
 
         <div className="service">
           <i className="icon-criminal-law" />
-          <h3>Derecho Penal</h3>
+          <h3>Derecho de Propiedad</h3>
           <p>
-            Representación legal en casos criminales y defensa ante acusaciones
-            penales
+            Asesoramiento legal en cuestiones relacionadas con la propiedad, incluyendo la compra, venta, arrendamiento y disputas sobre bienes inmuebles.
           </p>
         </div>
 

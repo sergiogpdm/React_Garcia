@@ -1,14 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Loader from './components/Loader/Loader';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import Home from './components/Home/Home';
-import Services from './components/Services/Services';
-import Team from './components/Team/Team';
-import Cases from './components/Cases/Cases';
-import Contact from './components/Contact/Contact';
 import './App.css';
+
+// LAZY LOADER
+const Home = lazy(() => import('./components/Home/Home'));
+const Services = lazy(() => import('./components/Services/Services'));
+const Team = lazy(() => import('./components/Team/Team'));
+const Cases = lazy(() => import('./components/Cases/Cases'));
+const Contact = lazy(() => import('./components/Contact/Contact'));
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -31,11 +33,13 @@ function App() {
       <div className="App">
         <Header refs={{ homeRef, servicesRef, teamRef, casesRef, contactRef }} />
         <main>
-          <Home ref={homeRef} />
-          <Services ref={servicesRef} />
-          <Team ref={teamRef} />
-          <Cases ref={casesRef} />
-          <Contact ref={contactRef} />
+          <Suspense fallback={<Loader />}>
+            <Home ref={homeRef} />
+            <Services ref={servicesRef} />
+            <Team ref={teamRef} />
+            <Cases ref={casesRef} />
+            <Contact ref={contactRef} />
+          </Suspense>
         </main>
         <Footer />
       </div>

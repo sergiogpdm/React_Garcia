@@ -20,7 +20,7 @@ const regionsData = {
     { name: "Chloé Bernard", title: "Abogada de Propiedad Intelectual" },
     { name: "Maxime Petit", title: "Abogado de Derecho Penal" }
   ],
-  Latam: [
+  Hispanoamérica: [
     { name: "Sofía Gómez", title: "Abogada Senior" },
     { name: "Juan Martinez", title: "Abogado de Derecho Civil" },
     { name: "Valentina Ortiz", title: "Abogada de Derecho Comercial" },

@@ -6,21 +6,20 @@ class HomeInner extends Component {
     super(props);
     this.state = {
       mainText: "NUESTRO OBJETIVO: BRINDAR EL MEJOR SERVICIO A NUESTROS CLIENTES",
-      backgroundColor: "#193043",
       textOpacity: 1,
       selectedOption: 0,
       options: [
         {
           text: "NUESTRO OBJETIVO: BRINDAR EL MEJOR SERVICIO A NUESTROS CLIENTES",
-          backgroundColor: "#193043",
+          backgroundColor: "linear-gradient(to bottom, #000000, #c9dee3)",
         },
         {
           text: "SOMOS EL EQUIPO QUE TE ACOMPAÑA DE PRINCIPIO A FIN",
-          backgroundColor: "#193043",
+          backgroundColor: "linear-gradient(to bottom, #000000, #c9dee3)",
         },
         {
           text: "INFÓRMATE DE LAS NOVEDADES LEGALES EN NUESTROS EVENTOS",
-          backgroundColor: "#193043",
+          backgroundColor: "linear-gradient(to bottom, #000000, #c9dee3)",
         },
       ],
     };
@@ -55,10 +54,9 @@ class HomeInner extends Component {
     });
   };
 
-  // Método para renderizar el texto principal con la palabra clave coloreada
   renderMainText = () => {
     const { selectedOption, options } = this.state;
-    const keywordStyles = [{ color: '#6d7d87' }, { color: '#6d7d87' }, { color: '#6d7d87' }]; // Estilos para cada palabra clave
+    const keywordStyles = [{ color: '#adb5b7' }, { color: '#adb5b7' }, { color: '#adb5b7' }]; // Estilos para cada palabra clave
     const keywords = ["objetivo:", "equipo", "legales"]; // Palabras clave
 
     const textParts = options[selectedOption].text.split(new RegExp(`(${keywords[selectedOption]})`, 'i')).map((part, index) =>
@@ -69,10 +67,11 @@ class HomeInner extends Component {
   };
 
   render() {
-    const { backgroundColor, textOpacity } = this.state;
+    const { textOpacity } = this.state;
+    const backgroundStyle = this.state.options[this.state.selectedOption].backgroundColor;
 
     return (
-      <div className="home" style={{ backgroundColor: backgroundColor, transition: 'background-color 0.5s ease-in-out' }}>
+      <div className="home" style={{ background: backgroundStyle, transition: 'background 0.5s ease-in-out' }}>
         <div className="home-content-left" style={{ opacity: textOpacity, transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out' }}>
           {this.renderMainText()}
         </div>

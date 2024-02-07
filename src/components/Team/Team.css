@@ -1,7 +1,7 @@
 .team {
   padding: 20px;
   text-align: center;
-  margin-bottom: -80px;
+  margin-bottom: 20px;
 }
 
 .team-header {
@@ -32,16 +32,18 @@
 .region-title {
   cursor: pointer;
   margin: 20px 0;
-  padding: 10px;
-  font-size: 50px;
+  padding: 38px;
+  font-size: 40px;
   color: #333; /* Color del texto */
   background-color: white; /* Color de fondo para las cabeceras */
   border: none;
   text-align: left;
   position: relative;
   transition: all 0.3s ease;
-  border-radius: 20px;
+  border-radius: 50px;
+  font-weight: bold; /* Texto en negrita */
 }
+
 
 .region-title:hover,
 .region-title:focus {
