@@ -49,7 +49,9 @@ const Services = forwardRef((props, ref) => {
           <i className="icon-criminal-law" />
           <h3>Derecho de Propiedad</h3>
           <p>
-            Asesoramiento legal en cuestiones relacionadas con la propiedad, incluyendo la compra, venta, arrendamiento y disputas sobre bienes inmuebles.
+            Asesoramiento legal en cuestiones relacionadas con la propiedad,
+            incluyendo la compra, venta, arrendamiento y disputas sobre bienes
+            inmuebles.
           </p>
         </div>
 

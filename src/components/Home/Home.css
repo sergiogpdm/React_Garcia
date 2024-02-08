@@ -1,4 +1,3 @@
-
 .home {
   height: 1000px;
   display: flex;
@@ -6,7 +5,9 @@
   transition: background-color 0.5s ease-in-out;
 }
 
-.home-content-left, .home-content-left h1, .home-content-right p {
+.home-content-left,
+.home-content-left h1,
+.home-content-right p {
   transition: opacity 0.5s ease-in-out;
 }
 
@@ -56,10 +57,13 @@
   background-color: #1d1b17;
 }
 
-.clickable-option, .selected, .not-selected {
+.clickable-option,
+.selected,
+.not-selected {
   cursor: pointer;
   color: white;
-  transition: font-size 0.5s ease-in-out, opacity 0.5s ease-in-out, background-color 0.5s ease-in-out, padding 0.5s ease-in-out;
+  transition: font-size 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    background-color 0.5s ease-in-out, padding 0.5s ease-in-out;
 }
 
 .selected {
@@ -93,7 +97,7 @@
 }
 
 /* tablet*/
-@media  (max-width: 1024px) {
+@media (max-width: 1024px) {
   .home {
     height: auto; /* Altura ajustable según el contenido */
   }

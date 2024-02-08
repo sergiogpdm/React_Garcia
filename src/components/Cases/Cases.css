@@ -1,11 +1,14 @@
 .cases {
   display: grid;
-  grid-template-columns: repeat(12, 1fr); /* Crea doce columnas para tener un control más fino */
+  grid-template-columns: repeat(
+    12,
+    1fr
+  ); /* Crea doce columnas para tener un control más fino */
   grid-gap: 20px; /* Espacio entre las tarjetas */
   padding: 20px;
   background-image: linear-gradient(to bottom, #272626, #000000);
   color: #ffffff; /* Texto en blanco para contraste */
-  font-family: 'Arial', sans-serif; /* Tipografía moderna y legible */
+  font-family: "Arial", sans-serif; /* Tipografía moderna y legible */
 }
 
 .cases h2 {
@@ -17,7 +20,6 @@
   color: white;
   margin-top: -10px;
 }
-
 
 .case {
   background-color: #ffffff;
@@ -60,7 +62,8 @@
   background-color: rgba(0, 0, 0, 0);
 }
 
-.info-content h3, .info-content p {
+.info-content h3,
+.info-content p {
   color: #ffffff;
   text-align: left;
 }
@@ -76,15 +79,18 @@
     width: auto;
   }
 
-  .case-featured, .case-smaller, .info-icon {
+  .case-featured,
+  .case-smaller,
+  .info-icon {
     grid-column: 1 / -1;
   }
 
-  .case-featured, .case-smaller {
+  .case-featured,
+  .case-smaller {
     width: auto;
   }
 
-  .cases h2{
+  .cases h2 {
     font-size: 20px;
     text-align: left;
     padding: block;
@@ -97,11 +103,15 @@
     grid-template-columns: 1fr;
   }
 
-  .case, .case-featured, .case-smaller, .info-icon {
+  .case,
+  .case-featured,
+  .case-smaller,
+  .info-icon {
     grid-column: 1 / -1;
   }
 
-  .case p, .info-content p {
+  .case p,
+  .info-content p {
     font-size: 18px;
     margin: 20px;
   }
@@ -110,7 +120,8 @@
     font-size: 24px;
   }
 
-  .case h4, .info-content h3 {
+  .case h4,
+  .info-content h3 {
     font-size: 20px;
   }
 

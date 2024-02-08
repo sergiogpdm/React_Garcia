@@ -116,7 +116,9 @@ button:hover {
   background-color: #0e355f;
 }
 
-input:focus, textarea:focus, button:focus {
+input:focus,
+textarea:focus,
+button:focus {
   outline: 2px solid #0056b3;
 }
 
@@ -150,7 +152,6 @@ input:focus, textarea:focus, button:focus {
   color: #666;
   opacity: 0.9;
 }
-
 
 @media (max-width: 768px) {
   .contact-page {
@@ -186,14 +187,15 @@ input:focus, textarea:focus, button:focus {
   }
 
   /* Ajustar el tamaño del texto para que sea más legible en dispositivos móviles */
-  h2, p {
+  h2,
+  p {
     font-size: 18px; /* Ligeramente más grande para mejor legibilidad */
   }
 
   /* Asegúrate de que todos los elementos interactivos sean fácilmente accesibles */
-  input, button, select {
+  input,
+  button,
+  select {
     min-height: 44px; /* Tamaño mínimo recomendado para áreas táctiles */
   }
 }
-
-

@@ -22,13 +22,12 @@
   transition: top 0.3s, transform 0.3s ease; /* Añade 'transform' a la transición si usas esta propiedad */
 }
 
-
 .header.hidden {
-  transform: translateY(-100%); /* o 'top: -100px;' dependiendo de la altura del header */
+  transform: translateY(
+    -100%
+  ); /* o 'top: -100px;' dependiendo de la altura del header */
   transition: transform 0.3s ease; /* Para una transición suave */
 }
-
-
 
 .header-logo {
   height: 70px; /* Ajusta esto según el tamaño de tu logo */
@@ -171,14 +170,12 @@ body {
 }
 
 @media (max-width: 1024px) {
-
-
   .header-logo {
     height: 120px; /* Aumenta el tamaño del logo */
     margin-left: 90px; /* Centra el logo horizontalmente */
   }
 
-  .header-nav li{
+  .header-nav li {
     font-size: 25px;
     font-weight: bold;
   }
@@ -189,14 +186,12 @@ body {
 }
 
 @media (min-width: 1120px) {
-
-
   .header-logo {
     height: 100px; /* Aumenta el tamaño del logo */
     margin-left: 50px; /* Centra el logo horizontalmente */
   }
 
-  .header-nav li{
+  .header-nav li {
     font-size: 28px;
     margin-right: 50px !important;
   }
@@ -215,5 +210,4 @@ body {
   .header-nav {
     display: none;
   }
-
 }

@@ -22,11 +22,11 @@
 
 .team h2 {
   grid-column: 1 / -1; /* Asegurándonos de que ocupe toda la fila */
-    color: #ffffff; /* Color del texto en blanco para contraste */
-    font-size: 68px; /* Tamaño de fuente grande para el título */
-    text-align: center; /* Centrar el texto */
-    margin: 0 0 20px 0; /* Margen alrededor del título */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #ffffff; /* Color del texto en blanco para contraste */
+  font-size: 68px; /* Tamaño de fuente grande para el título */
+  text-align: center; /* Centrar el texto */
+  margin: 0 0 20px 0; /* Margen alrededor del título */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .region-title {
@@ -44,14 +44,13 @@
   font-weight: bold; /* Texto en negrita */
 }
 
-
 .region-title:hover,
 .region-title:focus {
   background-color: #e6ecf2; /* Color de fondo al pasar el ratón */
 }
 
 .region-title::after {
-  content: '▼'; /* Puedes usar un ícono en su lugar */
+  content: "▼"; /* Puedes usar un ícono en su lugar */
   font-size: 1em;
   position: absolute;
   right: 10px;
@@ -104,7 +103,7 @@
   color: #666;
 }
 
-@media (max-width: 480px){
+@media (max-width: 480px) {
   .team h2 {
     font-size: 32px !important; /* Ajusta el tamaño de fuente, usa !important solo como último recurso */
     text-align: left !important; /* Alinea el texto a la izquierda, usa !important solo como último recurso */
@@ -124,11 +123,13 @@
   }
 
   .region-title::after {
-    content: '▶'; /* Cambiar el indicador para pantallas pequeñas */
+    content: "▶"; /* Cambiar el indicador para pantallas pequeñas */
     transform: rotate(45);
   }
 
   .region-title.active::after {
-    transform: rotate(90deg); /* Gira el indicador cuando está activo en pantallas pequeñas */
+    transform: rotate(
+      90deg
+    ); /* Gira el indicador cuando está activo en pantallas pequeñas */
   }
 }
