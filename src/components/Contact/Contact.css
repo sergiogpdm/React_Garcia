@@ -199,3 +199,104 @@ button:focus {
     min-height: 44px; /* Tamaño mínimo recomendado para áreas táctiles */
   }
 }
+
+/* Modo Oscuro */
+@media (prefers-color-scheme: dark) {
+  .contact-page {
+    /* Fondo oscuro general para la página de contacto */
+    background-color: #193043; /* Fondo uniforme oscuro */
+    color: #c9dee3; /* Color de texto claro para contraste */
+  }
+
+  .locations-section, .contact-form-section {
+    background-color: #2a3f5f; /* Fondo de las secciones para coincidir con el estilo oscuro */
+    color: #c9dee3; /* Color de texto para mantener la legibilidad */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave para profundidad */
+  }
+
+  .location, .form-group {
+    border-color: #4a6fa1; /* Borde sutil para elementos dentro de las secciones */
+  }
+
+  .location h3, .contact-form-section h2 {
+    color: #ffffff; /* Color de los títulos para mejorar la legibilidad */
+  }
+
+  .location p, .contact-form-section p, .form-group label.checkbox-label {
+    color: #ffffff; /* Color de texto para descripciones y etiquetas */
+  }
+
+  button {
+    background-color: #4a6fa1; /* Botón más claro para destacar sobre el fondo oscuro */
+    color: #ffffff; /* Texto del botón en blanco para contraste */
+  }
+
+  button:hover {
+    background-color: #3671b5; /* Oscurecer el botón al pasar el mouse para indicar interactividad */
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group select {
+    background-color: #1d2f4a; /* Fondo de campos de formulario para contraste suave */
+    color: #c9dee3; /* Color del texto del campo de formulario para legibilidad */
+    border: 1px solid #4a6fa1; /* Borde del campo de formulario para definición */
+  }
+
+  .form-group input::placeholder {
+    color: #c9dee3; /* Color del placeholder para los campos de formulario */
+  }
+
+  .form-group input[type="checkbox"] + label {
+    color: #c9dee3; /* Color de la etiqueta del checkbox para legibilidad */
+  }
+
+  .form-feedback {
+    color: #c9dee3; /* Color del feedback del formulario para asegurar visibilidad */
+  }
+
+  /* Modo Oscuro */
+@media (prefers-color-scheme: dark) {
+  .locations-section {
+    background-color: #2a3f5f; /* Fondo oscuro para la sección de ubicaciones */
+    color: #c9dee3; /* Color de texto claro para asegurar la legibilidad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    padding: 20px; /* Manteniendo el espaciado interno */
+    border-radius: 10px; /* Bordes redondeados para suavizar el diseño */
+  }
+
+  .locations-section h2 {
+    color: #ffffff; /* Título de la sección en color claro para destacar */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para mejorar la legibilidad */
+  }
+
+  .locations-section p {
+    color: white;
+  }
+
+  .location {
+    background-color: #1d2f4a; /* Fondo más oscuro para cada ubicación */
+    color: #c9dee3; /* Texto en color claro para contrastar con el fondo */
+    border-left: 5px solid #4a6fa1; /* Borde izquierdo como elemento distintivo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave para resaltar cada tarjeta */
+    padding: 20px; /* Espaciado interno adecuado */
+    border-radius: 5px; /* Bordes redondeados para coherencia con el estilo global */
+  }
+
+  .location:hover {
+    transform: translateY(-5px); /* Elevación al pasar el mouse para interactividad */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada en estado hover */
+  }
+
+  .location h3, .location p {
+    color: #c9dee3; /* Asegurando que todos los textos sean legibles */
+  }
+
+  .location strong {
+    color: #ffffff; /* Haciendo que los elementos destacados sean más visibles */
+  }
+}
+
+}
+

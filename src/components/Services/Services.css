@@ -102,3 +102,32 @@ body,
   margin-bottom: 40px;
   margin-top: 40px;
 }
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+  html, body, #root {
+    background-color: #193043; /* Fondo más oscuro para modo oscuro */
+    color: #c9dee3; /* Color de texto para modo oscuro */
+  }
+
+  .service {
+    background-color: #2a3f5f; /* Fondo de servicio para modo oscuro */
+    color: #c9dee3; /* Color de texto para modo oscuro */
+  }
+
+  .service i {
+    color: #4a6fa1; /* Color de icono para modo oscuro */
+  }
+
+  .service h3, .service p {
+    color: #c9dee3; /* Color de texto y título para modo oscuro */
+  }
+
+  .services-header h2 {
+    color: #c9dee3; /* Color de título para modo oscuro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para mejorar la legibilidad */
+  }
+
+  /* Puedes continuar ajustando los colores y estilos para adaptar cada elemento de tu página al modo oscuro */
+}
+

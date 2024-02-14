@@ -38,23 +38,19 @@
   margin-bottom: 10px;
 }
 
+.footer-bottom-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
 .footer-bottom,
 .footer-media,
 .footer-logo {
-  text-align: center; /* Centers content for all screen sizes */
-  padding-top: 20px;
+  text-align: center;
   font-size: 0.8em;
-  margin-top: 20px; /* Adjusts the top margin for visual separation */
-}
-
-.footer-bottom p {
-  color: white;
-}
-
-.footer-media {
-  display: flex;
-  justify-content: center; /* Centers social media icons */
-  margin-top: 20px; /* Adjusts for better visual separation */
 }
 
 .footer-bottom-icons,
@@ -66,37 +62,62 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .footer-content {
-    justify-content: center; /* Centers elements on medium screens */
+  .footer-content,
+  .footer-bottom-container {
+    justify-content: center;
+    flex-direction: column;
   }
 
-  .footer-column {
-    flex-basis: 100%; /* Makes each column take full width on smaller screens */
-    text-align: center; /* Centers the text of each column */
-  }
-
+  .footer-column,
+  .footer-bottom,
   .footer-media,
   .footer-logo {
-    justify-content: center; /* Centers content on smaller screens */
-    margin-top: 10px; /* Adjusts top margin for tight spacing */
-    margin-right: 0; /* Resets specific right margin adjustments */
+    flex-basis: 100%;
+    text-align: center;
   }
 
   .footer-media img,
   .footer-logo img {
-    display: inline-block; /* Ensures icons and logo are centered */
+    display: inline-block;
   }
 }
 
 @media (max-width: 480px) {
   .footer {
-    padding: 20px; /* Reduces padding for very small screens */
+    padding: 20px;
   }
 
-  /* Adjusts margins for a cleaner look on small devices */
-  .footer-bottom,
-  .footer-media,
-  .footer-logo {
-    margin-top: 10px;
+  .footer-bottom-container {
+    flex-direction: column;
+  }
+}
+
+/* Modo Oscuro */
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background-color: #0d1a25;
+    color: #c9dee3;
+  }
+
+  .footer-content,
+  .footer-column {
+    border-bottom: 1px solid #4a6fa1;
+  }
+
+  .footer-column h3 {
+    color: #c9dee3;
+    border-bottom: 1px solid #4a6fa1;
+  }
+
+  .footer-column ul li,
+  .footer-bottom p,
+  .footer-media p,
+  .footer-logo p {
+    color: #c9dee3;
+  }
+
+  .footer-bottom-icons,
+  .footer-bottom-icon {
+    filter: brightness(0) invert(1);
   }
 }

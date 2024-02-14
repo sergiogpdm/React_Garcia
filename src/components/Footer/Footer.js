@@ -39,41 +39,46 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="footer-bottom" style={{ cursor: "pointer" }}>
-        <p>
-          Aviso Legal / Política de Privacidad / Política de Cookies / Canal
-          ético
-        </p>
-      </div>
-      <div className="footer-media" style={{ cursor: "pointer" }}>
-        <img
-          src="/assets/fotos/instagram.png"
-          alt="Logo del Bufete"
-          className="footer-bottom-icons"
-        />
-        <img
-          src="/assets/fotos/facebook.png"
-          alt="Logo del Bufete"
-          className="footer-bottom-icons"
-        />
-        <img
-          src="/assets/fotos/x.png"
-          alt="Logo del Bufete"
-          className="footer-bottom-icons"
-        />
-      </div>
+      <div className="footer-bottom-container">
+        <div className="footer-logo">
+          <img
+            src="/assets/fotos/logo1gpdm.png"
+            alt="logo de gpdm"
+            className="footer-bottom-icon"
+          />
+          <img
+            src="/assets/fotos/logo_blanco.png"
+            alt="logo de gpdm"
+            className="footer-bottom-icon"
+          />
+        </div>
+        
+        
+        <div className="footer-bottom" style={{ cursor: "pointer" }}>
+          <p>
+            Aviso Legal / Política de Privacidad / Política de Cookies / Canal
+            ético
+          </p>
+        </div>
 
-      <div className="footer-logo">
-        <img
-          src="/assets/fotos/logo1gpdm.png"
-          alt="logo de gpdm"
-          className="footer-bottom-icon"
-        ></img>
-        <img
-          src="/assets/fotos/logo_blanco.png"
-          alt="logo de gpdm"
-          className="footer-bottom-icon"
-        ></img>
+        <div className="footer-media" style={{ cursor: "pointer" }}>
+          <img
+            src="/assets/fotos/instagram.png"
+            alt="Logo del Bufete"
+            className="footer-bottom-icons"
+          />
+          <img
+            src="/assets/fotos/facebook.png"
+            alt="Logo del Bufete"
+            className="footer-bottom-icons"
+          />
+          <img
+            src="/assets/fotos/x.png"
+            alt="Logo del Bufete"
+            className="footer-bottom-icons"
+          />
+        </div>
+        
       </div>
     </footer>
   );

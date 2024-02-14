@@ -152,3 +152,47 @@
     margin: 0 auto; /* Centra el botón dentro de su contenedor */
   }
 }
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+  html, body, #root {
+    background-color: #193043; /* Fondo oscuro general como en Servicios */
+    color: #c9dee3; /* Color de texto general para modo oscuro */
+  }
+
+  .home {
+    background-color: #2a3f5f; /* Fondo de Home para modo oscuro, similar a .service */
+    color: #c9dee3; /* Color de texto para modo oscuro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para mejorar la legibilidad */
+  }
+
+  .home-content-left, .home-content-left h1, .home-content-right p {
+    color: #c9dee3; /* Color de texto claro para contenido en modo oscuro */
+  }
+
+  .home-button {
+    background-color: #192b5e; /* Color de fondo para botones, como el borde izquierdo de .service */
+    color: #fff; /* Color de texto para botones */
+    border: none; /* En caso de que desees eliminar el borde */
+    transition: background-color 0.3s; /* Transición suave al cambiar el estado */
+  }
+
+  .home-button:hover {
+    background-color: #1d1b17; /* Color de fondo al pasar el ratón, para mantener coherencia */
+  }
+
+  .clickable-option, .selected, .not-selected {
+    color: #ffffff; /* Color de texto claro para opciones, manteniendo la coherencia */
+  }
+
+  .selected {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo para la opción seleccionada, más sutil en modo oscuro */
+    border-bottom: 3px solid #ffffff; /* Borde inferior para destacar la opción seleccionada */
+  }
+
+  .not-selected {
+    opacity: 0.7; /* Menor opacidad para opciones no seleccionadas, para diferenciar claramente */
+  }
+}
+
+

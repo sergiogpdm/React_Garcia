@@ -133,3 +133,51 @@
     margin-top: 70px !important;
   }
 }
+
+/* Modo Oscuro */
+@media (prefers-color-scheme: dark) {
+  .cases {
+    /* Asegurándonos de que el fondo sea coherente y mejore la legibilidad */
+    background-image: linear-gradient(to bottom, #0d1a25, #193043); /* Gradiente suave de oscuro a más oscuro */
+    color: #c9dee3; /* Color de texto claro para contraste */
+  }
+
+  .cases h2 {
+    color: #c9dee3; /* Asegurando que el título sea claramente visible */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para mejorar la legibilidad */
+  }
+
+  .case, .info-content {
+    background-color: #2a3f5f; /* Fondo de tarjetas y contenido de información */
+    color: #c9dee3; /* Color de texto para asegurar legibilidad */
+    border-left: 5px solid #4a6fa1; /* Borde izquierdo estilizado para destacar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    padding: 20px; /* Asegurando el espaciado adecuado dentro de las tarjetas */
+    border-radius: 10px; /* Suavizando esquinas para un look moderno */
+  }
+
+  .case:hover {
+    transform: translateY(-5px); /* Efecto hover para elevar la tarjeta */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada en hover para un efecto 3D */
+  }
+
+  .divider {
+    border-top: 2px solid #4a6fa1; /* Ajustando el divisor para que sea visible y estilizado */
+  }
+
+  .info-icon {
+    color: #c9dee3; /* Asegurando que el ícono/info sea claramente visible */
+  }
+
+  .info-content h3, .info-content p {
+    text-align: left; /* Alineación de texto para coherencia */
+    color: #c9dee3; /* Color de texto para legibilidad */
+  }
+
+  /* Ajustando los estilos para títulos y descripciones dentro de las tarjetas para mejorar la legibilidad */
+  .case h3, .case h4, .case p {
+    color: #c9dee3;
+  }
+}
+
+

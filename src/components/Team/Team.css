@@ -133,3 +133,40 @@
     ); /* Gira el indicador cuando está activo en pantallas pequeñas */
   }
 }
+
+/* Modo Oscuro */
+@media (prefers-color-scheme: dark) {
+  .team {
+    background-color: #193043; /* Alineado con el fondo oscuro de Services */
+    color: #c9dee3; /* Texto claro para contraste con el fondo oscuro */
+  }
+
+  .region-title {
+    color: #c9dee3; /* Color de texto para los títulos de las regiones */
+    background-color: #2a3f5f; /* Fondo más oscuro para títulos de regiones, similar a .service */
+    border: none; /* Remueve el borde para alinear con el estilo de Services */
+  }
+
+  .region-title:hover,
+  .region-title:focus {
+    background-color: #3f5370; /* Un poco más claro que el fondo para efecto hover */
+  }
+
+  .employee-card {
+    background-color: #2a3f5f; /* Fondo oscuro para las tarjetas de empleado, como el de .service */
+    color: #c9dee3; /* Color de texto claro para los detalles del empleado */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para las tarjetas, alineada con .service */
+    border-left: 5px solid #4a6fa1; /* Alineado con el estilo de borde izquierdo de Services */
+  }
+
+  .employee-name, .employee-title {
+    color: #c9dee3; /* Asegura que tanto el nombre como el título del empleado sean legibles */
+  }
+
+  /* Ajusta el indicador de la región activa para modo oscuro */
+  .region-title.active::after {
+    color: #c9dee3; /* Asegura que el indicador sea visible en modo oscuro */
+  }
+}
+
+
